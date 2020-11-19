@@ -1,0 +1,1 @@
+sql query from basic to end has been added after testing on microsoft sql server management studio
