@@ -157,7 +157,7 @@ select * from d_data;
 
 -- update using joins
 update e_data set e_age = e_age + 10
-from e_data e_data join d_data on e_data.e_address=d_data.d_address where d_address ='mumbai';
+from e_data join d_data on e_data.e_address=d_data.d_address where d_address ='mumbai';
 select * from e_data;
 
 update et_data set e_salary = e_salary +10
@@ -232,6 +232,10 @@ from male_employee left join female_employee on male_employee.e_id=female_employ
 select male_employee.e_name,male_employee.e_dept,female_employee.e_name,female_employee.e_dept
 from male_employee full join female_employee on male_employee.e_id=female_employee.e_id;
 
+use employee;
+select male_employee.e_name,male_employee.e_dept,male_employee.e_age,female_employee.e_age,female_employee.e_name,female_employee.e_dept
+ from male_employee inner join female_employee on male_employee.e_age>female_employee.e_age;
+
 
 
 -- to delete view the command is
@@ -250,9 +254,49 @@ alter table e_data drop grade;
 
 -- merging
 
+ merge e_data as t 
+ using et_data as s
+ on t.e_id=s.e_id
+ when matched 
+ then update set t.e_salary =s.e_salary;
+
+ select * from e_data;
+
+ merge e_data as t 
+ using et_data as s
+ on t.e_age>s.e_age
+ when matched then 
+ update set t.e_age=s.e_age;
+
+ select e_age from e_data;
+ select e_age from et_data;
+
+ merge e_data as t
+ using et_data as s
+ on t.e_id =s.e_id
+ when matched then update set t.e_salary=s.e_salary,t.e_age=s.e_age
+ when not matched by target then 
+ insert(e_id,e_name,e_address,e_age,e_gender,e_salary,e_dept)values(s.e_id,s.e_name,s.e_address,s.e_age,s.e_gender,s.e_salary,s.e_dept)
+ when not matched by source then delete;
+
+ select * from e_data;
+ insert into e_data values(11,'sheena','banglore',32,'female',65921,'cyber security',NULL);
+ alter table e_data drop grade;
  
+ insert into e_data values(12,'sheena','banglore',32,'female',65921,'data analysis',NULL);
+ insert into e_data values(13,'ankit','chennai',45,'male',75921,'database',NULL);
+ insert into e_data values(14,'shalu','noida',43,'female',55921,'networking',NULL);
+ 
+ merge e_data as t
+ using et_data as s
+ on t.e_id=s.e_id 
+ when matched then update set t.e_salary=s.e_salary,t.e_age=s.e_age
+ when not matched by target then 
+ insert(e_id,e_name,e_address,e_age,e_gender,e_salary,e_dept)values(s.e_id,s.e_name,s.e_address,s.e_age,s.e_gender,s.e_salary,s.e_dept)
+ when not matched by source then delete;
 
-
+ select * from e_data;
+select * from et_data;
 
 
 
