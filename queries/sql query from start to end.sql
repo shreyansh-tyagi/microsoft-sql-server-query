@@ -298,6 +298,40 @@ alter table e_data drop grade;
  select * from e_data;
 select * from et_data;
 
+--user defined functions
+-- 1) scalar value user defined  function
+-- 2) Table value user defined function
+
+--syntax: 1) scalar value user defined function :-
+/* create function function name(@parameter1_name as datatype,@parameter2_name as datatype.....)(as and datatype will be keyword where as parameter name could be any)
+returns return_type (return type will be same as parameter datatype name)
+as 
+begin
+------function body 
+return value 
+end */
+
+
+create function add_five(@num as int )
+returns int 
+as 
+begin 
+return ( @num +1000)
+end
+
+select dbo.add_five(15);
+select dbo.add_five(20) addedfive;
+
+select e_salary,sum(dbo.add_five(num)) net_amount from dbo.e_data group by e_salary order by net_amount;
+
+
+
+
+
+
+
+
+
 
 
 
