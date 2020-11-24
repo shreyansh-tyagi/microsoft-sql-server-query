@@ -321,8 +321,59 @@ end
 
 select dbo.add_five(15);
 select dbo.add_five(20) addedfive;
+use employee;
 
 select e_salary,sum(dbo.add_five(num)) net_amount from dbo.e_data group by e_salary order by net_amount;
+
+create function sum_all(@s as int)
+returns int 
+as begin 
+return(@s+1000)
+end 
+select dbo.sum_all(100);
+
+-- 2) table value user defined function
+/* syntax:-
+create function function_name(@parameter_name1 as datatype ,@parameter_name2 as datatype)
+returns table
+as 
+return(select columns-list from table_name where(condition)) */
+
+create function table_value(@gender as varchar(30))
+returns table 
+as 
+return(select * from e_data where e_gender =@gender);
+
+select * from dbo.table_value('male');
+select * from dbo.table_value('female');
+
+create function abc(@g as varchar(30))
+returns table
+as return(select * from et_data where e_gender=@g);
+select * from dbo.abc('male');
+select * from dbo.abc('female');
+
+create function salary_e(@s as varchar(20))
+returns table 
+as return(select * from e_data where e_name=@s);
+
+select * from dbo.salary_e('shreyansh');
+select * from e_data;
+select e_name,e_salary from dbo.salary_e('jeff');
+select e_name,e_salary from e_data where e_name='jeff';
+
+select distinct e_name from e_data where e_name like('%sh');
+select distinct e_name from e_data where e_name like('s%');
+select distinct e_name from e_data where e_name like('%h');
+select distinct e_name from e_data where e_name like ('%sh%');
+select distinct e_name from e_data where e_name like('%sh');
+select distinct e_name from e_data where e_name like('%sh or sh%');
+select e_name,e_salary from e_data where e_salary>30000 order by left(e_name,1) asc;
+select e_name,e_salary from et_data where e_salary>50000 order by right(e_name,1) asc;
+select e_name from et_data order by left(e_name,1) desc;
+
+
+
 
 
 
