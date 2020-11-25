@@ -372,11 +372,18 @@ select e_name,e_salary from e_data where e_salary>30000 order by left(e_name,1) 
 select e_name,e_salary from et_data where e_salary>50000 order by right(e_name,1) asc;
 select e_name from et_data order by left(e_name,1) desc;
 
+select distinct e_name from e_data where left(e_name,1) not in ('a','e','i','o','u') and right(e_name,1) not in ('a','e','i','o','u');
 
+select distinct e_name from e_data where e_name like ('a%');
 
+select distinct e_name from e_data where left(e_name,1) not in ('a','e','i','o','u');
+select distinct e_name from e_data where right(e_name,1) not in ('a','e','i','o','u');
+select distinct e_name from e_data where left(e_name,1) not in ('a','e','i','o','u') and right (e_name,1) not in('a','e','i','o','u');
 
+select distinct e_name from e_data where e_name like('a%') and e_name like ('%a');
 
-
+select distinct e_name from e_data where e_name like('a%') and e_name like ('%a');
+select e_name from e_data where e_name not like ('a%');
 
 
 
