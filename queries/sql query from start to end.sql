@@ -385,6 +385,29 @@ select distinct e_name from e_data where e_name like('a%') and e_name like ('%a'
 select distinct e_name from e_data where e_name like('a%') and e_name like ('%a');
 select e_name from e_data where e_name not like ('a%');
 
+--creating temporary table
+-- syntax:  #symbol is  neccessary to use while creating temporary table
+-- create table #table_name();
+create table #student(std_id int,std_name varchar(30),std_fee int,std_gender varchar(20));
+use employee ;
+select * from #student;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
