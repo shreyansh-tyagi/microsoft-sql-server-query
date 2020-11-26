@@ -359,6 +359,23 @@ as return(select * from e_data where e_name=@s);
 
 select * from dbo.salary_e('shreyansh');
 select * from e_data;
+
+
+create function table_val(@name as varchar(30),@gender as varchar(20),@id as int)
+returns table as return(select * from e_data where e_name=@name and e_gender=@gender and e_id =@id);
+select * from dbo.table_val('shreyansh','male',32);
+select * from e_data;
+
+
+create function id(@id as int)
+returns table as return (select * from e_data where e_id=@id);
+
+select e_name ,e_salary ,e_dept from dbo.id(4);
+
+
+
+
+
 select e_name,e_salary from dbo.salary_e('jeff');
 select e_name,e_salary from e_data where e_name='jeff';
 
