@@ -448,6 +448,28 @@ when e_age >30 and e_age<50 then 'young employee'
 else 'older employee '
 end from et_data;
 
+-- iif() function: it is alternative to case statement
+-- if the condition is satisfied then gives true or the messsage you want to print otherwise false
+-- syntax:- iif(boolean expression, true_vale ,false_value)
+
+select e_id,e_name,e_age ,iif(e_age<40,'young employee','old employee')  from e_data;
+select e_name,e_age,iif(e_age<40,'young employee','old employeee') as employee_generation from e_data;
+select * from e_data;
+select e_name,e_salary ,iif(e_salary<40000,'B','A') as grade from et_data;
+
+select e_name,e_salary ,iif(e_salary<40000 or e_salary<60000,'B','A') as grade from et_data;
+
+
+select e_name,e_salary ,iif(e_salary>40000 or e_salary<60000,'true','false') as grade from et_data;
+select e_name,e_salary ,iif(e_salary>40000 or e_salary>60000,'true','false') as grade from et_data;
+select e_name,e_salary ,iif(e_salary>40000 and  e_salary<60000,'true','false') as grade from et_data;
+
+
+
+
+
+
+
 
 
 
