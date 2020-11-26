@@ -374,8 +374,6 @@ select e_name ,e_salary ,e_dept from dbo.id(4);
 
 
 
-
-
 select e_name,e_salary from dbo.salary_e('jeff');
 select e_name,e_salary from e_data where e_name='jeff';
 
@@ -410,7 +408,45 @@ use employee ;
 select * from #student;
 
 
+--case statement :- it is used along with select statement first select statement is used then case statement along with when conditon and else then end the statement
+--syntax:- 
+/* case when condition1 then result 
+when condition2 then result 
+when condition3 then result 
+else result end */
 
+select case when 10>20 then '10 is smaller '
+when 10<20 then '20 is greater '
+else 'both equal'
+end
+
+
+select case when 10<20 then '10 is smaller then 20'
+when 10<20 then '20 is greater '
+else 'both equal'
+end
+
+
+select case when 10>10 then '10 is greater'
+when 10<10 then '20 is greater '
+else 'both equal'
+end
+
+-- now applying case statement on the table created in employee database
+select * , grading =
+case when e_salary >80000 then 'A'
+when e_salary >50000 then 'B'
+else 'C'
+end
+from e_data; 
+select * from et_data;
+
+
+select *, age= case 
+when e_age<30 then 'youngest employee'
+when e_age >30 and e_age<50 then 'young employee'
+else 'older employee '
+end from et_data;
 
 
 
