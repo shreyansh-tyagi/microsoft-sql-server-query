@@ -531,6 +531,94 @@ returns table as return(select e_name,e_gender,e_salary from et_data where e_gen
 select * from dbo.gender1('male',50000);
 
 
+--exception handling 
+--try and catch is block is used
+-- syntax: 
+/*begin try 
+sql statement 
+end try 
+begin catch
+print error ..or..
+rollback transaction
+end catch
+
+declare is used to declare any variable or to define the variable */
+
+declare @val1 as int 
+declare @val2 as int 
+begin try 
+set @val1=10
+set @val2=@val1/0
+end try
+begin catch 
+print error_message()  --error_message is a function to print the error
+end catch;
+
+declare @val3 as int 
+
+declare @val11 as int 
+declare @val22 as int 
+begin try 
+set @val11= 12;
+set @val22 =2;
+set @val3=@val11/@val22;
+end try
+
+begin catch
+print '6'
+end catch;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
