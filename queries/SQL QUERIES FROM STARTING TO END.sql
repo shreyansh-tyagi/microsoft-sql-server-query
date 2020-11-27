@@ -523,9 +523,12 @@ go;
 
 exec xyz;
 
+create function gender1(@gender as varchar(30),@salary as int)
+returns table as return(select e_name,e_age,e_salary,e_gender from et_data where e_gender=@gender or e_salary=@salary);
 
-
-
+modify function gender1(@gender as varchar(30))
+returns table as return(select e_name,e_gender,e_salary from et_data where e_gender =@gender);
+select * from dbo.gender1('male',50000);
 
 
 
