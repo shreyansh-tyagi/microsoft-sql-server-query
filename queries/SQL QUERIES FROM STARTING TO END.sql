@@ -467,6 +467,64 @@ use employee ;
 select e_name,e_age,e_salary,iif(e_age<40 and e_salary>50000,'A','B') as grade from et_data;
 select * from e_data;
 
+select e_name,e_salary,e_age,grade =
+case when e_age<40 and e_salary >50000 then 'A'
+when e_age <50 and e_salary >60000 then 'B'
+else 'C'
+end from e_data;
+
+
+-- stored procedure in SQL 
+--syntax:- create procedure procedure_name 
+-- as 
+-- <..sql statement..>
+-- go;
+-- now to execute the procedure we use
+-- exec procedure_name;
+
+create procedure procedure_age
+as select e_age from e_data 
+go;
+exec procedure_age;
+
+create procedure procedure_employee_details
+as select * from e_data 
+go;
+exec procedure_employee_details;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
