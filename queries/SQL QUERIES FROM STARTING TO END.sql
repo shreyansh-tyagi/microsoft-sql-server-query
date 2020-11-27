@@ -493,6 +493,40 @@ go;
 exec procedure_employee_details;
 
 
+-- stored procedure with parameter
+-- syntax
+--create procedure procedure_name 
+-- @parameter_name_datatype1, @parameter_name_datatype2 
+-- as 
+-- sql statement 
+-- go;
+-- exec procedure 
+use employee ;
+create procedure procedure_parameter 
+@gender as varchar(30)
+as (select e_name,e_gender,e_salary from e_data where e_gender=@gender)
+go;
+
+exec procedure_parameter @gender=e_gender;
+exec procedure_parameter @gender='female';
+
+
+create procedure abc1 @age as int 
+as select e_name,e_age from e_data
+go;
+exec abc1 @age =e_age ;
+exec abc1 @age =e_age;
+
+create procedure xyz
+as select e_name ,e_salary from e_data
+go;
+
+exec xyz;
+
+
+
+
+
 
 
 
