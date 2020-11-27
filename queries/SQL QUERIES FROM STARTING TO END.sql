@@ -463,9 +463,9 @@ select e_name,e_salary ,iif(e_salary<40000 or e_salary<60000,'B','A') as grade f
 select e_name,e_salary ,iif(e_salary>40000 or e_salary<60000,'true','false') as grade from et_data;
 select e_name,e_salary ,iif(e_salary>40000 or e_salary>60000,'true','false') as grade from et_data;
 select e_name,e_salary ,iif(e_salary>40000 and  e_salary<60000,'true','false') as grade from et_data;
-
-
-
+use employee ;
+select e_name,e_age,e_salary,iif(e_age<40 and e_salary>50000,'A','B') as grade from et_data;
+select * from e_data;
 
 
 
