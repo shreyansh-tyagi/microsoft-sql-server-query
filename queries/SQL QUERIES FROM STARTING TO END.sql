@@ -632,7 +632,7 @@ where e_name ='anuj'
 
 select * from et_data;
 rollback transaction
-
+commit transaction
 
 
 
