@@ -622,10 +622,16 @@ update e_data set e_age+=10 where e_id =1
 --now to make the change permanent in the trasaction use commit as keyword 
 commit transaction
 
+select * from et_data
 
+begin transaction 
+update et_data set e_age+=10
+where e_id =2
+update et_data set e_salary+=10000
+where e_name ='anuj'
 
-
-
+select * from et_data;
+rollback transaction
 
 
 
