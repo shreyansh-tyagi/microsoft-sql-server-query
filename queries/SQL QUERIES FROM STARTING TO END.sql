@@ -596,8 +596,13 @@ begin catch
 print error_message()
 end catch
 
-
-
+begin try 
+select e_name+e_age as add1 from e_data
+end try
+begin catch 
+print 'cannot add integer data with string data .....OOPS! sorry'
+end catch
+go
 
 
 
