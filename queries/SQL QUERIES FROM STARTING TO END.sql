@@ -568,6 +568,83 @@ begin catch
 print '6'
 end catch;
 
+create procedure hello 
+@hey as varchar(30) as
+select * from e_data where e_gender=@hey
+go
+
+exec hello @hey='male'
+exec hello @hey='female'
+
+
+declare @a as int 
+declare @b as int 
+declare @c as int 
+begin try
+set @a=10
+set @b=2
+set @c=@a+@b
+declare @d as float  
+set @d =@a/@b
+declare @e as int 
+set @e =@a*@b
+/* declare @f as int 
+set @f=@a/0 */
+end try 
+
+begin catch 
+print error_message()
+end catch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
