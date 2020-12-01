@@ -603,6 +603,33 @@ begin catch
 print 'cannot add integer data with string data .....OOPS! sorry'
 end catch
 go
+-- declare a variable 
+-- @ is used to alongwith declare keyword 
+
+declare @a as varchar(30)
+set @a ='shreyansh'
+print @a
+
+--transactions in sql 
+begin transaction 
+update e_data set e_age =10 where e_name ='shreyansh'
+
+select * from e_data
+rollback transaction   --this command is used to rollback the transaction in the same condition as it was earlier
+
+begin transaction
+update e_data set e_age+=10 where e_id =1
+--now to make the change permanent in the trasaction use commit as keyword 
+commit transaction
+
+
+
+
+
+
+
+
+
 
 
 
