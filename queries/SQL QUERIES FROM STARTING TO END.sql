@@ -634,6 +634,25 @@ select * from et_data;
 rollback transaction
 commit transaction
 
+select * from e_data;
+begin try
+begin transaction 
+update e_data 
+set e_age+=20 where e_id=1
+update e_data set e_salary+=1000/0 where e_gender='female'
+commit transaction 
+print 'transaction committed '
+end try 
+begin catch 
+rollback transaction 
+print 'transaction rollbacked'
+end catch 
+
+
+
+
+
+
 
 
 
