@@ -706,7 +706,7 @@ on e_data
 
  select * from et_data;
 
-
+ select e_name as name ,e_salary as salary from e_data ;
 
 
 
