@@ -660,6 +660,31 @@ rollback transaction
 print 'transaction rollbacked'
 end catch
 
+use employee;
+select * from et_data;
+begin try 
+begin transaction 
+update et_data set e_age+=10 where e_name='anuj'
+update et_data set e_salary+=1000 where e_id =1
+commit transaction
+print 'transaction commited '
+end try 
+begin catch
+rollback transaction
+print 'transaction rollbacked '
+end catch
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
