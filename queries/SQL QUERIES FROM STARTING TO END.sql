@@ -701,9 +701,10 @@ on e_data
  --index
  --syntax:- create index index_name on table_name(col1,col2);
 
+ create index employee_name on et_data(e_name);
+ select * from employee_name;
 
-
-
+ select * from et_data;
 
 
 
