@@ -675,6 +675,20 @@ print 'transaction rollbacked '
 end catch
 
 
+-- to use check function 
+create table sample_1(Dates date,id int not null,Name varchar(30),age int,check(age>18),primary key(id) );
+insert into sample_1 values('5-12-2020',1,'shrey',15);
+insert into sample_1 values('5-12-2020',1,'shrey',19);
+insert into sample_1 values('2020-05-12',2,'somu',25);
+
+select Name from sample_1 where Dates='2020-05-12';
+select * from sample_1;
+
+
+
+
+
+
 
 
 
