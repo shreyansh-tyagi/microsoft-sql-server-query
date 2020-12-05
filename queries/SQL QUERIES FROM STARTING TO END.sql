@@ -684,6 +684,41 @@ insert into sample_1 values('2020-05-12',2,'somu',25);
 select Name from sample_1 where Dates='2020-05-12';
 select * from sample_1;
 
+--trigger in sql
+-- suntax:-
+/* create trigger [trigger_name]
+before | after
+insert | update | delete 
+on table_name
+for each row 
+trigger boy */
+
+create trigger employee_salary
+after update 
+on e_data 
+ for each row set e_data.e_salary+=1000;
+
+ --index
+ --syntax:- create index index_name on table_name(col1,col2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
