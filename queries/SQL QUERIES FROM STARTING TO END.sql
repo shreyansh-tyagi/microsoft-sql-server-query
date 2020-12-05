@@ -648,7 +648,17 @@ rollback transaction
 print 'transaction rollbacked'
 end catch 
 
-
+begin try 
+begin transaction 
+update et_data set e_salary+=1000 where e_id=1
+update et_data set e_age+=100/0 where e_id =1 
+commit transaction
+print 'transaction has been commited '
+end try 
+begin catch
+rollback transaction 
+print 'transaction rollbacked'
+end catch
 
 
 
