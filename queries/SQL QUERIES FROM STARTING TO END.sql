@@ -732,12 +732,16 @@ select top(3) *  from e_data;
 
 select top(3) * from e_data where e_salary>30000 order by e_salary desc;
 
+--sql minus operator
+select * from e_data
+except
+select * from et_data;
 
-
-
-
-
-
+--null and not null operator 
+select * from e_data where e_name is not null;
+select * from e_data where e_name is null;
+select e_name,e_salary from et_data where e_age is not null;
+select e_name as name ,e_salary as salary from et_data where e_name is null;
 
 
 
