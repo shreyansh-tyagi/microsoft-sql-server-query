@@ -726,6 +726,27 @@ select e_name as name ,e_salary as employee_salary from e_data where e_id =any(s
 select e_name as name ,e_salary as employee_salary from e_data where e_id =all(select e_id from et_data where e_name='shrey');
 select e_name as name,e_salary as salary from e_data where e_id =all(select e_id from et_data where e_salary>50000 );
 
+--limit statement in select 
+select * from e_data where e_salary>50000 order by e_salary desc limit 4 [offset 2];
+select top(3) *  from e_data;
+
+select top(3) * from e_data where e_salary>30000 order by e_salary desc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
