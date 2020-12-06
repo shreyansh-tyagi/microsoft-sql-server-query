@@ -748,8 +748,18 @@ select e_name as name ,e_salary as salary from et_data where e_name is null;
 /* multi line comments
 hello how you doing */
 
+--if statement 
+declare @num as int
+set @num=20
+if @num <=20 and @num>20
+print 'we are in if '
+else print 'we are in else'
+go
 
-
+--nested if statement 
+declare @num as int 
+set @num=30
+if @num
 
 
 
