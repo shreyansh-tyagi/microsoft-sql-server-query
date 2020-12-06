@@ -706,7 +706,20 @@ on e_data
 
  select * from et_data;
 
+ -- aliases
  select e_name as name ,e_salary as salary from e_data ;
+select e_name as name, e_salary as salary,e_age as employee_age from et_data;
+
+--exists query
+select e_name from e_data where exists(select e_name from et_data where et_data.e_id= e_data.e_id and et_data.e_age>e_data.e_age);
+select e_name from e_data where exists(select e_name from et_data where et_data.e_id=e_data.e_id);
+select * from e_data;
+select * from et_data;
+
+
+
+
+
 
 
 
