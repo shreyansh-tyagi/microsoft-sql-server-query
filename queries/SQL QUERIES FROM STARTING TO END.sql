@@ -743,6 +743,30 @@ select * from e_data where e_name is null;
 select e_name,e_salary from et_data where e_age is not null;
 select e_name as name ,e_salary as salary from et_data where e_name is null;
 
+--comments in sql
+-- single line comment --
+/* multi line comments
+hello how you doing */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
