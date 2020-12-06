@@ -723,8 +723,8 @@ select e_name ,e_salary from e_data where e_id = any(select e_id from et_data wh
 select e_name,e_salary from e_data where e_id =any(select e_id from et_data);
 
 select e_name as name ,e_salary as employee_salary from e_data where e_id =any(select e_id from et_data);
-
-
+select e_name as name ,e_salary as employee_salary from e_data where e_id =all(select e_id from et_data where e_name='shrey');
+select e_name as name,e_salary as salary from e_data where e_id =all(select e_id from et_data where e_salary>50000 );
 
 
 
