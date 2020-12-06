@@ -759,7 +759,15 @@ go
 --nested if statement 
 declare @num as int 
 set @num=30
-if @num
+if @num>10 
+print 'we are in if'
+ begin
+if @num <=50
+print 'we are in nested if '
+else print 'we are in  nested else '
+end; 
+go
+
 
 
 
