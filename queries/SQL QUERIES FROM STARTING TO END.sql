@@ -713,8 +713,29 @@ select e_name as name, e_salary as salary,e_age as employee_age from et_data;
 --exists query
 select e_name from e_data where exists(select e_name from et_data where et_data.e_id= e_data.e_id and et_data.e_age>e_data.e_age);
 select e_name from e_data where exists(select e_name from et_data where et_data.e_id=e_data.e_id);
+select e_name,e_salary from e_data where exists(select * from et_data where et_data.e_id=e_data.e_id);
 select * from e_data;
 select * from et_data;
+
+--any and all operator
+select e_name ,e_salary from e_data where e_id = any(select e_id from et_data where e_salary =80910);
+
+select e_name,e_salary from e_data where e_id =any(select e_id from et_data);
+
+select e_name as name ,e_salary as employee_salary from e_data where e_id =any(select e_id from et_data);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
