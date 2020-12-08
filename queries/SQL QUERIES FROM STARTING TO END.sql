@@ -784,9 +784,26 @@ declare @c as int
 set @c=15
 while @c<20 begin
 print 'we are in while'
+print'*'
 set @c+=1
 end print'we are out of while'
 go
+
+--break and contine statement in sql
+
+declare @x as int 
+set @x=0
+while @x<=10
+begin if @x=2
+print'we are in if '
+--break;
+else set @x+=1
+print'we are in else'
+--continue
+end;
+print'done'
+go
+use employee;
 
 
 
