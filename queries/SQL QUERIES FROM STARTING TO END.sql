@@ -767,7 +767,17 @@ print 'we are in nested if '
 else print 'we are in  nested else '
 end; 
 go
-
+declare @a as int
+declare @b as int 
+set @b=50
+set @a =100
+if @a>10 and @b<100
+print 'we are in if '
+begin if @a=@b
+print 'we are in nested if'
+else 
+print 'we are in else '
+end ;
 
 
 
