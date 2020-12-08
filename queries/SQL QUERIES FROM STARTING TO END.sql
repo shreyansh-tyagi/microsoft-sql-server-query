@@ -817,7 +817,8 @@ cache 10
 
 
 
-
+--these are all commands used in sql queries 
+-- thank you all
 
 
 
