@@ -779,6 +779,29 @@ else
 print 'we are in else '
 end ;
 
+--while statement 
+declare @c as int
+set @c=15
+while @c<20 begin
+print 'we are in while'
+set @c+=1
+end print'we are out of while'
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
