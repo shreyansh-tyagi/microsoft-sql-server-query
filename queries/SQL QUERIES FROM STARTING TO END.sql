@@ -805,6 +805,31 @@ print'done'
 go
 use employee;
 
+--sequences statment  in sql
+create sequence yxz
+as bigint
+start with 1 
+increment by 1
+--min value 1 
+--max value 99
+no cycle 
+cache 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
