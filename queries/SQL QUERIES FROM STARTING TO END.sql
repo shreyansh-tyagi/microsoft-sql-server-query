@@ -57,6 +57,7 @@ insert into et_data values(9,'ishika','banglore',36,'female',103886,'data analys
 insert into et_data values(10,'endew','chennai',41,'male',81886,'cyber security');
 
 select e_name,e_salary from e_data;
+use employee;
 
 select distinct e_gender from e_data;
 select distinct e_dept from e_data;
