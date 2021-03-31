@@ -1,154 +1,50 @@
-# **_Structured Query Language(SQL)_**
+## Sales Insights Data Analysis Project
 
-## *This repository contain all the required queries of :point_right:[SQL language](https://github.com/shreyansh-tyagi/SQL-queries/blob/master/SQL%20QUERY%20FROM%20STARTING%20TO%20END.sql).*
-![sql_logo](https://user-images.githubusercontent.com/71514413/109434718-9fa5c600-7a3c-11eb-8a35-9d6de635b614.jpg)
+### Instructions to setup mysql on your local computer
+
+1. Follow step in this video to install mysql on your local computer
+https://www.youtube.com/watch?v=WuBcTJnIuzo
+
+1. SQL database dump is in db_dump.sql file above. Download `db_dump.sql` file to your local computer and import it as per instructions given in the tutorial video
+
+### Data Analysis Using SQL
+
+1. Show all customer records
+
+    `SELECT * FROM customers;`
+
+1. Show total number of customers
+
+    `SELECT count(*) FROM customers;`
+
+1. Show transactions for Chennai market (market code for chennai is Mark001
+
+    `SELECT * FROM transactions where market_code='Mark001';`
+
+1. Show distrinct product codes that were sold in chennai
+
+    `SELECT distinct product_code FROM transactions where market_code='Mark001';`
+
+1. Show transactions where currency is US dollars
+
+    `SELECT * from transactions where currency="USD"`
+
+1. Show transactions in 2020 join by date table
+
+    `SELECT transactions.*, date.* FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020;`
+
+1. Show total revenue in year 2020,
+
+    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.currency="INR\r" or transactions.currency="USD\r";`
+	
+1. Show total revenue in year 2020, January Month,
+
+    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and and date.month_name="January" and (transactions.currency="INR\r" or transactions.currency="USD\r");`
+
+1. Show total revenue in year 2020 in Chennai
+
+    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020
+and transactions.market_code="Mark001";`
 
 
-## *Topics :-*
-### *SQL Query Types :-*
-1. *Select statements*
-2. *Select limit statement*
-3. *Select top statment*
-4. *Insert statement*
-5. *Update statement*
-6. *Delete statement*
-7. *Truncate statement*
-8. *Union operator*
-9. *Union all operator*
-10. *Intersect operator*
-11. *Minus operator*
-12. *Except operator*
-13. *Case statement*
-
-### *SQL Comparision operators :-*
-1. *comparision operators(<=, >=, ==)*
-
-### *SQL Joins :-* 
-1. *Right join*
-2. *Left join*
-3. *Inner join*
-4. *Outer join*
-5. *Full join*
-
-### *SQL Aliases :-*
-1. *Aliases*
-
-### *SQL Clauses :-*
-1. *Distinct clause*
-2. *From clause*
-3. *Where clause*
-4. *Order by clause*
-5. *Group by clause*
-6. *Having clause*
-7. *Top clause*
-
-### *SQL Functions :-*
-1. *Count function*
-2. *Sum function*
-3. *Min function*
-4. *Max function*
-5. *Avg function*
-6. *Ltrim function*
-7. *Lower function*
-8. *Upper function*
-9. *Reverse function*
-10. *Substring function*
-11. *IIF function*
-12. *Scalar value function*
-13. *Table value function*
-14. *Left function*
-15. *Right function*
-
-### *SQL Operators And Conditions :-*
-1. *AND operator*
-2. *OR operator*
-3. *NOT operator*
-4. *AND & OR operator* 
-5. *LIKE operator :-*
-   * *Wild character( percent '%' , underscore '_')*
-6. *IN operator* 
-7. *IS NULL operator*
-8. *IS NOT NULL operator*
-9. *Union operator*
-10. *Union all operator*
-11. *Intersect operator*
-12. *Minus operator*
-13. *Except operator*  
-14. *BETWEEN Condition*
-15. *EXISTS Condition*
-16. *ANY operator*
-17. *ALL operator*
-
-### *SQL Tables and Views :-*
-1. *Create table*
-2. *Create table as*
-3. *Alter table*
-4. *Global temp table*
-5. *Local temp table*
-6. *SQL Views*
-7. *Temporary table*
-
-### *SQL Keys, Constraints and Indexes :-*
-1. *Primary keys*
-2. *Indexes*
-3. *Foreign keys*
-4. *Unique & Check constraints*
-5. *Default key*
-6. *Not null*
-
-### *SQL Datatypes :-*
-1. *Int datatype*
-2. *Small datatype*
-3. *Float datatype*
-4. *Char datatype*
-5. *Varchar datatype*
-6. *Date datatype*
-7. *Time datatype*
-8. *Year datatype*
-9. *Month datatype*
-10. *Interval datatype*
-11. *Date-time interval*
-
-### *SQL Programming :-*
-1. *Comments* 
-2. *Functions*
-3. *Procedures :-*
-   * *Stored Procedure with parameter* 
-   * *Stored Procedure wthout parameter*
-4. *Literals(Contants)*
-5. *Declare variable*
-6. *Loops and conditional statements*
-7. *Sequences(Autonumber)*
-8. *Triggers*
-9. *Cursors*
-10. *Auto increment(Sequences)*
-11. *Merge*
-
-### *SQL Database Administration :-*
-1. *Attach database*
-2. *Detach database*
-3. *Vaccum*
-4. *Auto_vaccum*
-
-### *SQL Merge topics :-*
-1. *Exceptional habdling :-*
-   * *Try*
-   * *Catch*
-2. *Transaction, Rollback Transaction, Commit transaction*
-3. *Grant*
-4. *Revoke*
-
-# **_SQL COMMANDS :-_**
- *DDL*|*DQL*|*DML*|*DCL*
-------|-----|-----|-----
-*(Data definition language)*|*(Data query language)*|*(Data manipulation language)*|*(Data control language)*
-*Create command*|*Select*|*Insert*|*Grant*
-*Alter command*||*Update*|*Revoke*
-*Drop command*||*Delete*
-*Rename command*||*Merge*
-*Truncate command*||*Call*
-*Comments*||*Explain paln*
-|||*Lock table*
-
-## For problem solving on SQL language check my :point_right:[HackerRank](https://www.hackerrank.com/shreyansh_tyagi) account.
 
