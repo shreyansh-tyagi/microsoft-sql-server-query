@@ -1,6 +1,6 @@
 create database dbms_college;
 create table emp_salary(sname varchar(20),salary int);
-
+use dbms_college;
 insert into emp_salary values('A',10000);
 insert into emp_salary values('B',5200);
 insert into emp_salary values('C',4500);
@@ -46,3 +46,10 @@ when mark<45 and mark>=35 then 'third'
 else 'fail'
 end
 from marks;
+
+
+update marks
+set sname=replace('Raj','Raj','Raju');
+select * from marks;
+
+delete from marks where sname='Raju';
