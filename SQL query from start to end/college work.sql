@@ -65,3 +65,7 @@ select ename,doj,salary from employee where emp_id='E09' and year(doj)=1991;
 
 --employees who joined accept the month februray
 select * from employee where month(doj)!=2;
+
+--displaying the happy birthday message 
+
+select concat('HAPPY BIRTHDAY TO ',ename) from employee where day(dob)=2 and month(dob) =9; 
