@@ -52,6 +52,7 @@ select *from employee order by(DOJ) desc;
 
 --employees with there experience
 select ename,datediff(year,DOJ,'2021-06-01') as 'year_of_experience' from employee; --datediff(year,startdate,enddate)
+select ename,datediff(month,doj,getdate()) as 'month_of_experience' from employee;
 
 --to find the three most experience person
 select top(3) ename,doj,salary from employee order by(doj) asc; 
@@ -63,7 +64,7 @@ select ename,salary from employee where salary%2!=0;
 --employee from E01 to E10 who joined in particular year
 select ename,doj,salary from employee where emp_id='E09' and year(doj)=1991;
 
---employees who joined accept the month februra
+--employees who joined accept the month februray
 select * from employee where month(doj)!=2;
 
 --displaying the happy birthday message 
