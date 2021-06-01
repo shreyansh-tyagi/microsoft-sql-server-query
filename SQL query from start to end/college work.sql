@@ -63,7 +63,7 @@ select ename,salary from employee where salary%2!=0;
 --employee from E01 to E10 who joined in particular year
 select ename,doj,salary from employee where emp_id='E09' and year(doj)=1991;
 
---employees who joined accept the month februray
+--employees who joined accept the month februra
 select * from employee where month(doj)!=2;
 
 --displaying the happy birthday message 
