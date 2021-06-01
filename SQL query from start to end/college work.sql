@@ -16,8 +16,10 @@ insert into employee values('E04','sunny','1993-08-12','2018-06-10',40000);
 insert into employee values('E05','shrey','1998-03-06','2017-04-11',90000);
 insert into employee values('E06','shreya','1994-05-10','2012-03-23',34000);
 insert into employee values('E07','shanaya','1998-05-11','2019-01-21',34000);
-insert into employee values('E08','shanaya','1998-05-11','2019-01-21',34341);
+insert into employee values('E08','shinchan','1996-06-12','2015-03-26',34341);
 
+--delete from table 
+delete from employee where emp_id='E08'; 
 
 --to show table 
 select * from employee;
@@ -51,3 +53,5 @@ select *from employee order by(DOJ) desc;
 select ename,datediff(year,DOJ,'2021-06-01') as 'year_of_experience' from employee; --datediff(year,startdate,enddate)
 
 --employees who have odd values as there salary
+
+select ename,salary from employee where salary%2!=0;
