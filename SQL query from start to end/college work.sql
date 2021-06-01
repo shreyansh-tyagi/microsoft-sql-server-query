@@ -55,3 +55,6 @@ select ename,datediff(year,DOJ,'2021-06-01') as 'year_of_experience' from employ
 --employees who have odd values as there salary
 
 select ename,salary from employee where salary%2!=0;
+
+--employee from E01 to E10 who joined in particular year
+select ename,doj,salary from employee where emp_id=
