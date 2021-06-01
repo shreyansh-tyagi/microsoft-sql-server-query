@@ -55,6 +55,10 @@ select ename,datediff(year,DOJ,'2021-06-01') as 'year_of_experience' from employ
 select ename,datediff(month,doj,getdate()) as 'month_of_experience' from employee; --getdate is built-in function used to today's date
 select ename,datediff(year,doj,getdate()) as 'year_of_experience' from employee;
 select ename,datediff(day,doj,getdate()) as 'month_of_experience' from employee;
+
+--to find how old your are 
+select concat('old you are',ename),datediff(year,dob,getdate()) as 'how_old_your_are' from employee;
+
 --to find the three most experience person
 select top(3) ename,doj,salary from employee order by(doj) asc; 
 
