@@ -17,6 +17,7 @@ insert into employee values('E05','shrey','1998-03-06','2017-04-11',90000);
 insert into employee values('E06','shreya','1994-05-10','2012-03-23',34000);
 insert into employee values('E07','shanaya','1998-05-11','2019-01-21',34000);
 insert into employee values('E08','shinchan','1996-06-12','2015-03-26',34341);
+insert into employee values('E09','shivam','1972-03-19','1991-04-01',99341);
 
 --delete from table 
 delete from employee where emp_id='E08'; 
@@ -57,4 +58,4 @@ select ename,datediff(year,DOJ,'2021-06-01') as 'year_of_experience' from employ
 select ename,salary from employee where salary%2!=0;
 
 --employee from E01 to E10 who joined in particular year
-select ename,doj,salary from employee where emp_id=
+select ename,doj,salary from employee where emp_id=''
