@@ -57,7 +57,7 @@ select ename,datediff(year,doj,getdate()) as 'year_of_experience' from employee;
 select ename,datediff(day,doj,getdate()) as 'month_of_experience' from employee;
 
 --to find how old your are 
-select concat(ename,' you are '),concat(datediff(year,dob,getdate()),' years old') as 'how_old_your_are' from employee order by year(dob) desc;
+select concat(ename,' you are '),concat(datediff(year,dob,getdate()),' years old') as 'how_old_you_are' from employee order by year(dob) desc;
 
 --to find the three most experience person
 select top(3) ename,doj,salary from employee order by(doj) asc; 
