@@ -116,4 +116,7 @@ on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID order by CUSTOMER.CUST_NAME asc;
 -- 8.	Write a SQL statement to make a list in ascending order for the customer who holds
 --   a grade less than 300 and works either through a salesman or by own.
 
+select distinct CUSTOMER.CUST_NAME,CUSTOMER.GRADE,SALESMAN.NAME as salesman_name from CUSTOMER join
+(ORDERS join SALESMAN on SALESMAN.SALESMAN_ID=ORDERS.SALESMAN_ID) on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID where CUSTOMER.GRADE<300 
+order by CUSTOMER.CUST_NAME asc;
 
