@@ -52,7 +52,7 @@ select *from employee order by(DOJ) desc;
 
 --employees with there experience
 select ename,datediff(year,DOJ,'2021-06-01') as 'year_of_experience' from employee; --datediff(year,startdate,enddate)
-select ename,datediff(month,doj,getdate()) as 'month_of_experience' from employee; --getdate is built-in function used to today's date
+select ename,datediff(month,doj,getdate()) as 'month_of_experience' from employee; --getdate is built-in function used to take today's date from computer
 select ename,datediff(year,doj,getdate()) as 'year_of_experience' from employee;
 select ename,datediff(day,doj,getdate()) as 'month_of_experience' from employee;
 
