@@ -130,3 +130,12 @@ order by CUSTOMER.CUST_NAME asc;
 
 select distinct CUSTOMER.CUST_NAME,CUSTOMER.CITY,ORDERS.ORD_NO,ORDERS.ORD_DATE,ORDERS.PURCH_AMT from CUSTOMER join
 ORDERS on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID order by ORDERS.ORD_DATE asc ;
+
+
+select distinct CUSTOMER.CUST_NAME,CUSTOMER.CITY,ORDERS.ORD_NO,ORDERS.ORD_DATE,ORDERS.PURCH_AMT from CUSTOMER join
+(SALESMAN join ORDERS on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID) on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID order by ORDERS.ORD_DATE asc ;
+
+ --10. Write a SQL statement to make a report with customer name, city, order number, 
+--order date, order amount salesman name and commission to find that either any of 
+--the existing customers have placed no order or placed one or more orders by their 
+--salesman or by own.
