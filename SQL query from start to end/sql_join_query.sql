@@ -92,6 +92,6 @@ join (SALESMAN join ORDERS on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID) on ORDERS
 -- 5.	Write a SQL statement to find the list of customers who appointed a 
 -- salesman for their jobs who does not live in the same city where their customer lives, and gets a commission is above 12%.
 
-select CUSTOMER.CUST_NAME,'appointed',SALESMAN.NAME as salesman_name from CUSTOMER
+select distinct CUSTOMER.CUST_NAME,'appointed',SALESMAN.NAME as salesman_name from CUSTOMER
 join (SALESMAN join ORDERS on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID) on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID
 where (SALESMAN.CITY!=CUSTOMER.CITY) and SALESMAN.COMMISSION>0.12;
