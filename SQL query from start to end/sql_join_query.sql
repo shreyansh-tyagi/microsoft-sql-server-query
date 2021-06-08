@@ -69,3 +69,7 @@ select salesman.name,CUSTOMER.CUST_NAME from SALESMAN join CUSTOMER on SALESMAN.
 
 select orders.ORD_NO,ORDERS.PURCH_AMT,CUSTOMER.CUST_NAME,CUSTOMER.CITY from ORDERS join CUSTOMER 
 on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID where ORDERS.PURCH_AMT between 500 and 2000;
+
+-- 3.	Write a SQL statement to know which salesman are working for which customer.
+
+select SALESMAN.NAME,CUSTOMER.CUST_NAME from SALESMAN join CUSTOMER on SALESMAN.CITY=CUSTOMER.CITY;
