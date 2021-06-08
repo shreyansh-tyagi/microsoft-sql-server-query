@@ -102,4 +102,5 @@ where (SALESMAN.CITY!=CUSTOMER.CITY) and SALESMAN.COMMISSION>0.12;
 -- which customer gives the order and which salesman works for that customer and how much commission he gets for an order.
 
 select ORDERS.ORD_NO,ORDERS.ORD_DATE,ORDERS.PURCH_AMT,CUSTOMER.CUST_NAME,'gives oder to',SALESMAN.NAME
-as salesman_name,'and a commision of ',SALESMAN.COMMISSION from ORDERS join (CUSTOMER join SALESMAN on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID)
+as salesman_name,'and a commision of ',SALESMAN.COMMISSION from CUSTOMER join (ORDERS join SALESMAN on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID)
+on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID;
