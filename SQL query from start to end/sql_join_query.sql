@@ -82,5 +82,8 @@ BY',SALESMAN.NAME AS SALESMAN_NAME FROM CUSTOMER JOIN
 -- 4.	Write a SQL statement to find the list of customers who appointed a salesman for their 
 --  jobs who gets a commission from the company is more than 12%. 
 
-select CUSTOMER.CUST_NAME from CUSTOMER join (SALESMAN join ORDERS on orders.SALESMAN_ID=SALESMAN.SALESMAN_ID)
+select distinct CUSTOMER.CUST_NAME from CUSTOMER join (SALESMAN join ORDERS on orders.SALESMAN_ID=SALESMAN.SALESMAN_ID)
 on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID where SALESMAN.COMMISSION>0.12;
+
+select distinct CUSTOMER.CUST_NAME,'fullfilled his order by',SALESMAN.NAME as salesman from CUSTOMER 
+join (SALESMAN join ORDERS on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID) on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID where SALESMAN.COMMISSION>0.12;
