@@ -120,3 +120,9 @@ select distinct CUSTOMER.CUST_NAME,CUSTOMER.GRADE,SALESMAN.NAME as salesman_name
 (ORDERS join SALESMAN on SALESMAN.SALESMAN_ID=ORDERS.SALESMAN_ID) on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID where CUSTOMER.GRADE<300 
 order by CUSTOMER.CUST_NAME asc;
 
+
+
+
+-- 9.	Write a SQL statement to make a report with customer name, city, order number,
+-- order date, and order amount in ascending order according to the order date to find that either any of the existing 
+--   customers have placed no order or placed one or more orders.
