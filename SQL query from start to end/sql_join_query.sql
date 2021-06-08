@@ -59,3 +59,5 @@ select * from orders;
 -- the salesmen and customer who belongs to the same city.
 
 select salesman.name,salesman.city,customer.CUST_NAME,customer.city from salesman join customer on salesman.city = CUSTOMER.city;
+
+select salesman.name,CUSTOMER.CUST_NAME from SALESMAN join CUSTOMER on SALESMAN.CITY=CUSTOMER.CITY;
