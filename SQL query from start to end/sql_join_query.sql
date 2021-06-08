@@ -57,14 +57,14 @@ select * from salesman;
 select * from CUSTOMER;
 select * from orders;
 
---Write a SQL statement to prepare a list with salesman name, customer name and their cities for 
+--1. Write a SQL statement to prepare a list with salesman name, customer name and their cities for 
 -- the salesmen and customer who belongs to the same city.
 
 select salesman.name,salesman.city,customer.CUST_NAME,customer.city from salesman join customer on salesman.city = CUSTOMER.city;
 
 select salesman.name,CUSTOMER.CUST_NAME from SALESMAN join CUSTOMER on SALESMAN.CITY=CUSTOMER.CITY;
 
--- Write a SQL statement to make a list with order no, purchase amount, customer name and their cities 
+--2. Write a SQL statement to make a list with order no, purchase amount, customer name and their cities 
 -- for those orders which order amount between 500 and 2000. 
 
 select orders.ORD_NO,ORDERS.PURCH_AMT,CUSTOMER.CUST_NAME,CUSTOMER.CITY from ORDERS join CUSTOMER 
@@ -98,7 +98,7 @@ where (SALESMAN.CITY!=CUSTOMER.CITY) and SALESMAN.COMMISSION>0.12;
 
 
 
--- Write a SQL statement to find the details of a order i.e. order number, order date, amount of order, 
+--6 Write a SQL statement to find the details of a order i.e. order number, order date, amount of order, 
 -- which customer gives the order and which salesman works for that customer and how much commission he gets for an order.
 
 select distinct ORDERS.ORD_NO,ORDERS.ORD_DATE,ORDERS.PURCH_AMT,CUSTOMER.CUST_NAME,'gives oder to',SALESMAN.NAME
@@ -106,9 +106,14 @@ as salesman_name,'who gets a commision of ',SALESMAN.COMMISSION from CUSTOMER jo
 on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID;
 
 
--- Write a SQL statement to make a list in ascending order for the customer who works either through a salesman or by own.
+--7. Write a SQL statement to make a list in ascending order for the customer who works either through a salesman or by own.
 
 select CUSTOMER.CUST_NAME,SALESMAN.NAME as salesman_name from CUSTOMER join(SALESMAN join ORDERS on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID)
 on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID order by CUSTOMER.CUST_NAME asc;
+
+
+
+-- 8.	Write a SQL statement to make a list in ascending order for the customer who holds
+--   a grade less than 300 and works either through a salesman or by own.
 
 
