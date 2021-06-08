@@ -104,3 +104,11 @@ where (SALESMAN.CITY!=CUSTOMER.CITY) and SALESMAN.COMMISSION>0.12;
 select distinct ORDERS.ORD_NO,ORDERS.ORD_DATE,ORDERS.PURCH_AMT,CUSTOMER.CUST_NAME,'gives oder to',SALESMAN.NAME
 as salesman_name,'who gets a commision of ',SALESMAN.COMMISSION from CUSTOMER join (ORDERS join SALESMAN on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID)
 on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID;
+
+
+-- Write a SQL statement to make a list in ascending order for the customer who works either through a salesman or by own.
+
+select CUSTOMER.CUST_NAME,SALESMAN.NAME as salesman_name from CUSTOMER join(SALESMAN join ORDERS on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID)
+on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID order by CUSTOMER.CUST_NAME asc;
+
+
