@@ -87,3 +87,7 @@ on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID where SALESMAN.COMMISSION>0.12;
 
 select distinct CUSTOMER.CUST_NAME,'fullfilled his order by',SALESMAN.NAME as salesman from CUSTOMER 
 join (SALESMAN join ORDERS on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID) on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID where SALESMAN.COMMISSION>0.12;
+
+
+-- 5.	Write a SQL statement to find the list of customers who appointed a 
+-- salesman for their jobs who does not live in the same city where their customer lives, and gets a commission is above 12%.
