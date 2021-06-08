@@ -29,8 +29,6 @@ INSERT INTO CUSTOMER VALUES(3009,'GEOFF CAMERON','BERLIN',100);
 INSERT INTO CUSTOMER VALUES(3003,'JOZY ALTIDOR','MOSCOW',200);
 INSERT INTO CUSTOMER VALUES(3001,'BRAD GUZAN','LONDON',100);
 
-select * from salesman;
-select * from CUSTOMER;
 
 
 CREATE TABLE ORDERS(
@@ -53,6 +51,10 @@ INSERT INTO ORDERS VALUES(70012,250.45,'2012-06-27',3008,5002);
 INSERT INTO ORDERS VALUES(70011,75.29,'2012-08-17',3003,5007);
 INSERT INTO ORDERS VALUES(70013,3045.6,'2012-04-25',3002,5001);
 
+
+
+select * from salesman;
+select * from CUSTOMER;
 select * from orders;
 
 --Write a SQL statement to prepare a list with salesman name, customer name and their cities for 
@@ -61,3 +63,9 @@ select * from orders;
 select salesman.name,salesman.city,customer.CUST_NAME,customer.city from salesman join customer on salesman.city = CUSTOMER.city;
 
 select salesman.name,CUSTOMER.CUST_NAME from SALESMAN join CUSTOMER on SALESMAN.CITY=CUSTOMER.CITY;
+
+-- Write a SQL statement to make a list with order no, purchase amount, customer name and their cities 
+-- for those orders which order amount between 500 and 2000. 
+
+select orders.ORD_NO,ORDERS.PURCH_AMT,CUSTOMER.CUST_NAME,CUSTOMER.CITY from ORDERS join CUSTOMER 
+on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID where ORDERS.PURCH_AMT between 500 and 2000;
