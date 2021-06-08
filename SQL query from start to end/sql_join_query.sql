@@ -139,3 +139,16 @@ select distinct CUSTOMER.CUST_NAME,CUSTOMER.CITY,ORDERS.ORD_NO,ORDERS.ORD_DATE,O
 --order date, order amount salesman name and commission to find that either any of 
 --the existing customers have placed no order or placed one or more orders by their 
 --salesman or by own.
+
+select distinct CUSTOMER.CUST_NAME,CUSTOMER.CITY,ORDERS.ORD_NO,ORDERS.ORD_DATE,ORDERS.PURCH_AMT,SALESMAN.NAME as salesman_name,SALESMAN.CITY
+,SALESMAN.COMMISSION from CUSTOMER join (SALESMAN join ORDERS on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID)
+on CUSTOMER.CUSTOMER_ID=ORDERS.CUSTOMER_ID ;
+
+
+select distinct CUSTOMER.CUST_NAME,CUSTOMER.CITY,ORDERS.ORD_NO,ORDERS.ORD_DATE,ORDERS.PURCH_AMT,SALESMAN.NAME as salesman_name,SALESMAN.CITY
+,SALESMAN.COMMISSION from CUSTOMER join (SALESMAN join ORDERS on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID)
+on CUSTOMER.CUSTOMER_ID=ORDERS.CUSTOMER_ID order by CUSTOMER.CUST_NAME asc;
+
+select * from salesman;
+select * from CUSTOMER;
+select * from orders;
