@@ -81,6 +81,9 @@ select salesman.name,CUSTOMER.CUST_NAME from SALESMAN join CUSTOMER on SALESMAN.
 select orders.ORD_NO,ORDERS.PURCH_AMT,CUSTOMER.CUST_NAME,CUSTOMER.CITY from ORDERS join CUSTOMER 
 on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID where ORDERS.PURCH_AMT between 500 and 2000;
 
+select ORDERS.ORD_NO,ORDERS.PURCH_AMT,CUSTOMER.CUST_NAME,CUSTOMER.CITY from CUSTOMER join ORDERS
+on CUSTOMER.CUSTOMER_ID=ORDERS.CUSTOMER_ID where ORDERS.PURCH_AMT between 500 and 2000;
+
 -- 3.	Write a SQL statement to know which salesman are working for which customer.
 
 select CUSTOMER.CUST_NAME,'handle by',SALESMAN.NAME from CUSTOMER join SALESMAN on CUSTOMER.CITY=SALESMAN.CITY;
@@ -119,7 +122,7 @@ on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID ;
 
 --7. Write a SQL statement to make a list in ascending order for the customer who works either through a salesman or by own.
 
-select CUSTOMER.CUST_NAME,SALESMAN.NAME as salesman_name from CUSTOMER join(SALESMAN join ORDERS on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID)
+select distinct CUSTOMER.CUST_NAME,SALESMAN.NAME as salesman_name from CUSTOMER join(SALESMAN join ORDERS on ORDERS.SALESMAN_ID=SALESMAN.SALESMAN_ID)
 on ORDERS.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID order by CUSTOMER.CUST_NAME asc;
 
 
