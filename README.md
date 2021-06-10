@@ -29,6 +29,7 @@
 3. *Inner join*
 4. *Outer join*
 5. *Full join*
+6. *Join*
 
 ### *SQL Aliases :-*
 1. *Aliases*
