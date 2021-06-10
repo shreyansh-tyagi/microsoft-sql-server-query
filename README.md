@@ -131,7 +131,7 @@
 4. *Auto_vaccum*
 
 ### *SQL Merge topics :-*
-1. *Exceptional habdling :-*
+1. *Exceptional handling :-*
    * *Try*
    * *Catch*
 2. *Transaction, Rollback Transaction, Commit transaction*
