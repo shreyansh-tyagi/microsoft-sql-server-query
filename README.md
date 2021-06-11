@@ -1,5 +1,5 @@
 
-# *:point_right:[Structured Query Language(SQL)](https://github.com/shreyansh-tyagi/SQL-queries/blob/master/SQL%20QUERY%20FROM%20STARTING%20TO%20END.sql).*
+# *:point_right:[Structured Query Language(SQL)](https://github.com/shreyansh-tyagi/SQL-queries/blob/master/SQL%20QUERY%20FROM%20STARTING%20TO%20END.sql)*
 
  <a href="https://www.mysql.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="150" height="150"/>&nbsp;&nbsp;&nbsp;&nbsp; </a>
 
